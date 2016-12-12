@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212064959) do
+ActiveRecord::Schema.define(version: 20161212080415) do
 
   create_table "plants", force: :cascade do |t|
     t.string   "name"
     t.text     "placement"
-    t.time     "date_planted"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "date_planted"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.datetime "flowered_at"
+    t.string   "flower_colour"
+    t.text     "notes"
   end
 
   create_table "users", force: :cascade do |t|

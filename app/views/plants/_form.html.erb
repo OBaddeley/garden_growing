@@ -21,7 +21,19 @@
   </div>
   <div class="field">
     <%= f.label :date_planted %><br>
-    <%= f.time_select :date_planted %>
+    <%= f.date_select :date_planted, include_blank: true %>
+  </div>
+  <div class="field">
+    <%= f.label :flowered_at %><br>
+    <%= f.date_select :flowered_at, include_blank: true %>
+  </div>
+  <div class="field">
+    <%= f.label :flower_colour %><br>
+    <%= f.text_field :flower_colour %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
   </div>
   <div class="actions">
     <%= f.submit %>

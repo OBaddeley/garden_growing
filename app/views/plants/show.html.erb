@@ -15,5 +15,20 @@
   <%= @plant.date_planted %>
 </p>
 
+<p>
+  <strong>Flowered At:</strong>
+  <%= @plant.flowered_at %>
+</p>
+
+<p>
+  <strong>Flower Colour:</strong>
+  <%= @plant.flower_colour %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @plant.notes %>
+</p>
+
 <%= link_to 'Edit', edit_plant_path(@plant) %> |
 <%= link_to 'Back', plants_path %>
