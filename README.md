@@ -1,4 +1,4 @@
-## How is my garden growing.
+#How is my garden growing.
 
 This app tracks what has been planted and where, and how they grow.
 
