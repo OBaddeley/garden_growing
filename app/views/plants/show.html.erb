@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @plant.name %>
+</p>
+
+<p>
+  <strong>Placement:</strong>
+  <%= @plant.placement %>
+</p>
+
+<p>
+  <strong>Date planted:</strong>
+  <%= @plant.date_planted %>
+</p>
+
+<%= link_to 'Edit', edit_plant_path(@plant) %> |
+<%= link_to 'Back', plants_path %>
