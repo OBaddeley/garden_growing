@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212080415) do
+ActiveRecord::Schema.define(version: 20170213185800) do
 
   create_table "plants", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20161212080415) do
     t.datetime "flowered_at"
     t.string   "flower_colour"
     t.text     "notes"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|

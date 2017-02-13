@@ -4,7 +4,7 @@ class PlantsController < ApplicationController
   # GET /plants
   # GET /plants.json
   def index
-    @plants = Plant.all
+    @plants = Plant.where(user_id: current_user.id).all
   end
 
   # GET /plants/1
@@ -24,7 +24,9 @@ class PlantsController < ApplicationController
   # POST /plants
   # POST /plants.json
   def create
-    @plant = Plant.new(plant_params)
+    current_plant_params = plant_params.merge(user_id: current_user.id)
+
+    @plant = Plant.new(current_plant_params)
 
     respond_to do |format|
       if @plant.save
@@ -40,8 +42,9 @@ class PlantsController < ApplicationController
   # PATCH/PUT /plants/1
   # PATCH/PUT /plants/1.json
   def update
+    current_plant_params = plant_params.merge(user_id: current_user.id)
     respond_to do |format|
-      if @plant.update(plant_params)
+      if @plant.update(current_plant_params)
         format.html { redirect_to @plant, notice: 'Plant was successfully updated.' }
         format.json { render :show, status: :ok, location: @plant }
       else
@@ -69,6 +72,6 @@ class PlantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plant_params
-      params.require(:plant).permit(:name, :placement, :date_planted, :flowered_at, :flower_colour, :notes)
+      params.require(:plant).permit(:name, :placement, :date_planted, :flowered_at, :flower_colour, :notes, :user_id)
     end
 end
